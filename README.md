@@ -1,5 +1,7 @@
 # IsardLab Cooperative Escape Room Challenge 💻🔒
 
+**🎮 Live Demo**: [https://tcrurav.github.io/isardlab-challenge/](https://tcrurav.github.io/isardlab-challenge/)
+
 A real-time **Cooperative Escape Room** web application designed to be played simultaneously by 3 players, each from their own device (laptop, mobile, or tablet).
 
 Built with **React**, **Vite**, and **Firebase Firestore**, this application features real-time synchronization, a bilingual interface (EN/ES), a premium *Glassmorphism* dark design, and full responsive compatibility.
