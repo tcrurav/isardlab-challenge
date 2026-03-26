@@ -137,11 +137,15 @@ export const GameProvider = ({ children }) => {
 
             try {
                 const elapsed = now - sessionData.startTime;
-                await setDoc(doc(db, 'rankings', sessionId), {
-                    teamName: sessionData.teamName || 'Unknown Team',
-                    timeTaken: elapsed,
-                    createdAt: now
-                });
+                if (elapsed > 0) {
+                    await setDoc(doc(db, 'rankings', sessionId), {
+                        teamName: sessionData.teamName || 'Unknown Team',
+                        timeTaken: elapsed,
+                        createdAt: now
+                    });
+                } else {
+                    console.warn("Clock skew detected: Elapsed time is negative. Not saving to rankings.");
+                }
             } catch (err) {
                 console.error("Failed to save ranking", err);
             }
